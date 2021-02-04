@@ -38,3 +38,16 @@ function addNewTask(e) {
     }
     
 }
+
+function clearAllTasks() {
+    while (taskList.firstChild) {
+        taskList.removeChild(taskList.firstChild);
+    }
+}
+
+function filterTasks(e) {
+    let collections = document.querySelectorAll('.collection_item');
+    collections.forEach(element => {
+        element.style.display = (element.textContent.toUpperCase().indexOf(filter.value.toUpperCase()) > -1) ? 'block' : 'none';
+    });
+}
