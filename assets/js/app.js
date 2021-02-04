@@ -1,3 +1,4 @@
+
 const taskInput = document.querySelector('#task');
 const form = document.querySelector('#task-form');
 const filter = document.querySelector('#filter'); 
@@ -66,3 +67,32 @@ function reverseOrder(e) {
     
     isAscending = !isAscending;
 }
+
+taskList.addEventListener('click', removeTask);
+
+function removeTask(e) {
+    if(e.target.parentElement.classList.contains('delete-item')) {
+        if (confirm('Are you sure you want to remove this task?')) {
+            e.target.parentElement.parentElement.remove();
+        }
+    }
+}
+
+const reloader = document.querySelector(".fa");
+reloader.addEventListener('click', () => location.reload() )
+
+// document.querySelector('#signup').addEventListener('click', function() {
+// alert('Sign up button click');
+// });
+
+// document.querySelector('#account_links').addEventListener('click', function()  {
+// alert('Account links click');
+// });
+
+// document.querySelector('#header').addEventListener('click',function () {
+// alert('Header click');
+// });
+
+
+  
+
