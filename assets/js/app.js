@@ -51,3 +51,18 @@ function filterTasks(e) {
         element.style.display = (element.textContent.toUpperCase().indexOf(filter.value.toUpperCase()) > -1) ? 'block' : 'none';
     });
 }
+
+function reverseOrder(e) {
+    const collectionsList = document.querySelectorAll('.collection_item');
+    const order = new Array();
+    for (let index = 0; index < collectionsList.length; index++) {
+        order.push(collectionsList[index]);         
+    }
+    order.reverse();
+
+    for (let index = 0; index < collectionsList.length; index++) { 
+        taskList.appendChild(order[index]); 
+    }    
+    
+    isAscending = !isAscending;
+}
